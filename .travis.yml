@@ -13,7 +13,10 @@ env:
 matrix:
   include:
     - os: linux
-      arch: arm64
+      arch: arm64-graviton2
+      dist: focal
+      virt: vm
+      group: edge
       env:
         - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
         - MB_PYTHON_VERSION=3.5
