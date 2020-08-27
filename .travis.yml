@@ -1,7 +1,8 @@
 if: tag IS present
 
 language: generic
-sudo: required
+services:
+  - docker
 
 env:
   global:
@@ -10,6 +11,41 @@ env:
 
 matrix:
   include:
+    - os: linux
+      arch: arm64
+      env:
+        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        - MB_PYTHON_VERSION=3.5
+        - MB_ML_VER=2014
+        - PLAT=aarch64
+    - os: linux
+      arch: arm64
+      env:
+        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        - MB_PYTHON_VERSION=3.6
+        - MB_ML_VER=2014
+        - PLAT=aarch64
+    - os: linux
+      arch: arm64
+      env:
+        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        - MB_PYTHON_VERSION=3.7
+        - MB_ML_VER=2014
+        - PLAT=aarch64
+    - os: linux
+      arch: arm64
+      env:
+        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        - MB_PYTHON_VERSION=3.8
+        - MB_ML_VER=2014
+        - PLAT=aarch64
+    - os: linux
+      arch: arm64
+      env:
+        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
+        - MB_PYTHON_VERSION=3.9
+        - MB_ML_VER=2014
+        - PLAT=aarch64
     #- os: linux
     #  services:
     #    - docker
@@ -26,51 +62,6 @@ matrix:
     #  services:
     #    - docker
     #  env: MB_PYTHON_VERSION=3.8
-    - os: linux
-      arch: arm64
-      services:
-        - docker
-      env:
-        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
-        - MB_PYTHON_VERSION=3.5
-        - MB_ML_VER=2014
-        - PLAT=aarch64
-    - os: linux
-      arch: arm64
-      services:
-        - docker
-      env:
-        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
-        - MB_PYTHON_VERSION=3.6
-        - MB_ML_VER=2014
-        - PLAT=aarch64
-    - os: linux
-      arch: arm64
-      services:
-        - docker
-      env:
-        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
-        - MB_PYTHON_VERSION=3.7
-        - MB_ML_VER=2014
-        - PLAT=aarch64
-    - os: linux
-      arch: arm64
-      services:
-        - docker
-      env:
-        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
-        - MB_PYTHON_VERSION=3.8
-        - MB_ML_VER=2014
-        - PLAT=aarch64
-    - os: linux
-      arch: arm64
-      services:
-        - docker
-      env:
-        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_aarch64
-        - MB_PYTHON_VERSION=3.9
-        - MB_ML_VER=2014
-        - PLAT=aarch64
     #- os: osx
     #  env: MB_PYTHON_VERSION=3.5
     #- os: osx
